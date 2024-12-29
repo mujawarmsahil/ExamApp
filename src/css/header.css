@@ -1,0 +1,117 @@
+.navContainer{
+    display: flex;
+    justify-content: flex-start;
+    gap: 50px;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* outline: 2px solid red; */
+    padding: 0 25px;
+    background-color: #0D0D0D;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+}
+
+.logoContainer
+{
+    /* outline: 2px solid red; */
+    width: 200px;
+    text-align: center;
+    line-height: 80px;
+    height: 100%;
+}
+
+.closeOpenNavigation{
+    display: none;
+}
+
+.logoContainer a{
+    text-decoration: none;
+    color: #F2F2F2;
+    font-weight: bolder;
+    font-style: italic;
+    font-size:2rem;
+}
+
+.logoContainer a span{
+    color: rgba(180, 104, 3, 0.637);
+    font-weight: bolder;
+    font-style: italic;
+    font-size:2rem;
+}
+
+.linkContainer .links .link{
+    display: inline-block;
+    line-height: 40px;
+    color:#BFBFBF;
+    text-align: center;
+    margin: 0 10px;
+    padding: 0px 10px;
+    border-bottom: 1px solid transparent;
+    transition: 0.9s all;
+    -webkit-transition: 0.9s all;
+    -moz-transition: 0.9s all;
+    -ms-transition: 0.9s all;
+    -o-transition: 0.9s all;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.linkContainer .links .link:hover{
+    border-bottom-color: #BFBFBF;
+}
+
+.linkContainer .links .link:active{
+    box-shadow: 0 0 10px 5px #BFBFBF inset;;
+}
+
+@media only screen and (max-width:990px)
+{
+    .linkContainer .links .link{
+        margin: 0 5px;
+        padding:  0 5px;
+    }
+}
+
+@media only screen and (max-width:870px)
+{
+    .linkContainer{
+        position: absolute;
+        top: 90px;
+        right: -100%;
+        transition: 0.5s all;
+        background-color: #0D0D0D;
+        border-radius: 20px;
+        padding: 10px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+        -webkit-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        -o-transition: 0.5s all;
+}
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .navContainer{
+        justify-content: space-between;
+    }
+
+    .closeOpenNavigation{
+        display: block;
+        color: white;
+    }
+}

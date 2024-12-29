@@ -1,0 +1,68 @@
+.itemContainer{
+    min-height: 100vh;
+    background-color:  #262626;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tableContainer{
+    /* border-radius: 20px; */
+    /* outline: 1px solid rgb(0, 0, 0); */
+    border-top: 2px solid #141313;
+    border-bottom: 2px solid #141313;
+    border-left: 2px solid #141313;
+    padding: 5px 10px;
+    height: 60vh;
+    width: 90%;
+    box-shadow: 0 0 10px 2px #413939cc;
+    overflow-y:auto ;
+    overflow-x: auto;
+    /* -webkit-border-radius: 20px; */
+    /* -moz-border-radius: 20px; */
+    /* -ms-border-radius: 20px; */
+    /* -o-border-radius: 20px; */
+    /* border: 1px solid black; */
+}
+
+.table{
+    /* overflow: hidden; */
+    width: 100%;
+}
+
+th,td{
+    padding:10px 20px ;
+    color: white;
+}
+
+thead {
+    background-color: #141313;
+    text-align: center;
+}
+
+.answer{
+    color: #FF5841;
+}
+
+.update{
+    color:#4A8BDF;
+}
+
+.delete{
+    color: #C5ADC5;
+}
+
+td.answer , td.update , td.delete{
+    cursor: pointer;
+}
+
+.tableContainer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tableContainer::-webkit-scrollbar-track {
+    background:linear-gradient(30deg,#C5ADC5,#B2B5E0);
+  }
+
+  .tableContainer::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }

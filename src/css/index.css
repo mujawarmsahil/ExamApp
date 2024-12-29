@@ -1,0 +1,85 @@
+html , body{
+  width: 100%;
+  min-height: 100vh;
+}
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+
+.homeContainer{
+  /* outline: 2px solid red; */
+  width: 100%;
+  /* outline: 2px solid red; */
+  min-height: 100vh;
+  display: flex;
+  background-blend-mode:multiply;
+  background-color: #0d0d0d63;
+  background-image:url("../assets/HomeBanner.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.homeContainer h1{
+  font-size: 3rem;
+  color: transparent;
+  transition: 0.9s all;
+  -webkit-text-stroke: 1px  white;
+  -webkit-transition: 0.9s all;
+  -moz-transition: 0.9s all;
+  -ms-transition: 0.9s all;
+  -o-transition: 0.9s all;
+}
+
+.homeContainer h1:hover{
+  -webkit-text-stroke: 1px #0D0D0D;
+}
+.scheduleExam
+{
+  background-color: #0D0D0D;
+  padding: 10px 20px;
+  color: #BFBFBF;
+  border-radius: 10px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  border: 2px solid transparent;
+  box-shadow:0 0 10px 2px #1D1842;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+  -o-transition: 0.5s all;
+}
+
+.scheduleExam:hover
+{
+  color:#2a235a;
+  border: 2px solid #1D1842;
+}
+
+
+
+
+@media only screen and (max-width:515px) {
+  .homeContainer h1{
+    font-size: 2rem;
+    -webkit-text-stroke: 0px transparent;
+    color:#1D1842;
+    text-align:center;
+  }
+}
+
+
+
