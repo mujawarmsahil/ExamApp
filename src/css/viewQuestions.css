@@ -51,12 +51,32 @@ thead {
     color: #C5ADC5;
 }
 
+tbody tr:nth-child(odd)
+{
+    background-color: rgba(68, 63, 63, 0.384);
+}
+
+tbody tr:nth-child(even)
+{
+    background-color: #b1abab9d;
+}
+
+tbody tr:nth-child(odd):hover
+{
+    background-color: rgb(68, 63, 63);
+}
+
+tbody tr:nth-child(even):hover
+{
+    background-color: #b1ababc2;
+}
+
 td.answer , td.update , td.delete{
     cursor: pointer;
 }
 
 .tableContainer::-webkit-scrollbar {
-    width: 10px;
+    width: 1px;
 }
 
 .tableContainer::-webkit-scrollbar-track {
