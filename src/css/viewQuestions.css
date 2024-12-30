@@ -81,8 +81,8 @@ td.answer , td.update , td.delete{
 
 .tableContainer::-webkit-scrollbar-track {
     background:linear-gradient(30deg,#C5ADC5,#B2B5E0);
-  }
+}
 
-  .tableContainer::-webkit-scrollbar-thumb {
+.tableContainer::-webkit-scrollbar-thumb {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  }
+}
