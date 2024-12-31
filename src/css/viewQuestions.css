@@ -40,15 +40,27 @@ thead {
 }
 
 .answer{
+    text-align: center;
     color: #FF5841;
 }
 
+tbody tr td:first-child
+{
+    text-align: center;
+}
+
 .update{
+    text-align: center;
     color:#4A8BDF;
 }
 
-.delete{
+.delete { 
+    text-align: center; 
+}
+
+.delete a{ 
     color: #C5ADC5;
+    text-decoration: none; 
 }
 
 tbody tr:nth-child(odd)
@@ -63,12 +75,12 @@ tbody tr:nth-child(even)
 
 tbody tr:nth-child(odd):hover
 {
-    background-color: rgb(68, 63, 63);
+    background-color: rgba(68, 63, 63, 0.699);
 }
 
 tbody tr:nth-child(even):hover
 {
-    background-color: #b1ababc2;
+    background-color: #b1abab50;
 }
 
 td.answer , td.update , td.delete{

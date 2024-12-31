@@ -13,7 +13,6 @@ html , body{
 .homeContainer{
   /* outline: 2px solid red; */
   width: 100%;
-  /* outline: 2px solid red; */
   min-height: 100vh;
   display: flex;
   background-blend-mode:multiply;
@@ -37,10 +36,18 @@ html , body{
   -moz-transition: 0.9s all;
   -ms-transition: 0.9s all;
   -o-transition: 0.9s all;
+  padding: 5px 10px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 
 .homeContainer h1:hover{
+  box-shadow: 0 0 10px 2px #fff inset;
   -webkit-text-stroke: 1px #0D0D0D;
+  background-color: rgba(0, 0, 0, 0.329);
 }
 .scheduleExam
 {
@@ -75,9 +82,11 @@ html , body{
 @media only screen and (max-width:515px) {
   .homeContainer h1{
     font-size: 2rem;
-    -webkit-text-stroke: 0px transparent;
+    -webkit-text-stroke: 0px transparent !important;
     color:#1D1842;
     text-align:center;
+    background-color: transparent !important;
+    box-shadow: 0px 0px 0px 0px transparent inset !important;
   }
 }
 

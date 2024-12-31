@@ -1,4 +1,5 @@
 import "../css/ViewQuestions.css"
+import {NavLink} from "react-router-dom"
 function ViewQuestion(props){
     return(
         <>
@@ -31,7 +32,7 @@ function ViewQuestion(props){
                                 <td>{e.option4}</td>
                                 <td className="answer">{e.answer}</td>
                                 <td className="update">Update</td>
-                                <td className="delete" onClick={(e) => removeElement(e)}>Delete</td>
+                                <td className="delete"><NavLink to={`/DeleteQuestion/${parseInt(index)}`}>Delete</NavLink></td>
                             </tr>
                         })
                     }

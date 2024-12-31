@@ -4,6 +4,7 @@ import ScheduleExam from "./ScheduleExam"
 import StartExam from "./StartExam"
 import ViewQuestion from "./ViewQuestion"
 import Home from "./Home"
+import DeleteQuestion from "./DeleteQuestion"
 import "../css/header.css"
 import {BrowserRouter,Routes,Route,NavLink} from "react-router-dom";
 import { useState } from "react"
@@ -37,7 +38,7 @@ function Header(){
             <BrowserRouter>
                 <nav className="navContainer">
                     <div className="logoContainer">
-                        <NavLink to="/"><a>Answer<span>Me.</span></a></NavLink>
+                        <NavLink to="/">Answer<span>Me.</span></NavLink>
                     </div>
                     <div className="closeOpenNavigation">
                         <i className="fa-solid fa-bars" id="icon" onClick={navChange}></i>
@@ -60,6 +61,7 @@ function Header(){
                     <Route path="/scheduleExam" element={<ScheduleExam/>}/>
                     <Route path="/startExam" element={<StartExam/>}/>
                     <Route path="/result" element={<Result/>}/>
+                    <Route path="/DeleteQuestion/:index/*" element={<DeleteQuestion questionSet={allQuestionObject}/>}/>
                 </Routes>
             </BrowserRouter>
         </>
