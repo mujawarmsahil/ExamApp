@@ -31,7 +31,7 @@ function ViewQuestion(props){
                                 <td>{e.option3}</td>
                                 <td>{e.option4}</td>
                                 <td className="answer">{e.answer}</td>
-                                <td className="update">Update</td>
+                                <td className="update"><NavLink to={`/UpdateQuestion/${parseInt(index)}`}>Update</NavLink></td>
                                 <td className="delete"><NavLink to={`/DeleteQuestion/${parseInt(index)}`}>Delete</NavLink></td>
                             </tr>
                         })

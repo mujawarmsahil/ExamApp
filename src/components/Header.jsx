@@ -8,6 +8,7 @@ import DeleteQuestion from "./DeleteQuestion"
 import "../css/header.css"
 import {BrowserRouter,Routes,Route,NavLink} from "react-router-dom";
 import { useState } from "react"
+import UpdateQuestions from "./UpdateQuestions"
 
 function Header(){
     let[allQuestionObject , setQuestionObject] = useState([]);
@@ -62,6 +63,7 @@ function Header(){
                     <Route path="/startExam" element={<StartExam/>}/>
                     <Route path="/result" element={<Result/>}/>
                     <Route path="/DeleteQuestion/:index/*" element={<DeleteQuestion questionSet={allQuestionObject}/>}/>
+                    <Route path="/UpdateQuestion/:index/*" element={<UpdateQuestions questionSet={allQuestionObject}/>}/>
                 </Routes>
             </BrowserRouter>
         </>

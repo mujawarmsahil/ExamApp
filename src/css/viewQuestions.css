@@ -54,6 +54,12 @@ tbody tr td:first-child
     color:#4A8BDF;
 }
 
+.update a{
+    text-decoration: none;
+    text-align: center;
+    color:#4A8BDF;
+}
+
 .delete { 
     text-align: center; 
 }
