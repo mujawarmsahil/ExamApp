@@ -1,4 +1,5 @@
 import "../css/ViewQuestions.css"
+import PropTypes from "prop-types"
 import {NavLink} from "react-router-dom"
 function ViewQuestion(props){
     return(
@@ -43,5 +44,18 @@ function ViewQuestion(props){
         </>
     )
 }
+
+ViewQuestion.propTypes = {
+    questionSet: PropTypes.arrayOf(
+        PropTypes.shape({
+            question: PropTypes.string.isRequired,
+            option1: PropTypes.string.isRequired,
+            option2: PropTypes.string.isRequired,
+            option3: PropTypes.string.isRequired,
+            option4: PropTypes.string.isRequired,
+            answer: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 
 export default ViewQuestion

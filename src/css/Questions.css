@@ -7,7 +7,10 @@
 .QuestionInterface{
     width: 90%;
     padding: 20px;
-    outline: 2px solid red;
+    /* outline: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .question{
@@ -41,4 +44,25 @@
     width: 100%;
     display: flex;
     justify-content: space-around;
+}
+
+.moveBtns .prevBtn ,.moveBtns .nextBtn{
+    padding:10px 25px;
+    color:white;
+    font-weight:lighter;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    background-color:darkslategrey;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    cursor: pointer;
+}
+
+.nextBtn[type="submit"] a{
+    text-decoration: none;
+    color:white;
+    font-weight:lighter;
 }

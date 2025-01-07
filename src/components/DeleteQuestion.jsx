@@ -1,5 +1,6 @@
 import { useParams, NavLink } from "react-router-dom";
 import "../css/DeleteQuestions.css"
+import PropTypes from "prop-types";
 function DeleteQuestion(props) {
     const { index } = useParams();
    
@@ -24,5 +25,18 @@ function DeleteQuestion(props) {
         </div>
     );
 }
+
+DeleteQuestion.propTypes = {
+    questionSet: PropTypes.arrayOf(
+        PropTypes.shape({
+            question: PropTypes.string.isRequired,
+            option1: PropTypes.string.isRequired,
+            option2: PropTypes.string.isRequired,
+            option3: PropTypes.string.isRequired,
+            option4: PropTypes.string.isRequired,
+            answer: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 
 export default DeleteQuestion;
