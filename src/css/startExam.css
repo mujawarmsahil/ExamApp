@@ -1,0 +1,35 @@
+.examCard{
+    padding:  30px 45px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #300606;
+    text-align: start;
+    background-color: rgb(160, 156, 156);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    border: 1px solid rgb(230, 230, 230);
+    box-shadow: 0 0 10px 10px #5e5a5a inset;
+}
+
+.startExam{
+    padding: 10px ;
+    background-color: rgb(59, 64, 65);
+    border: unset;
+    cursor: pointer;
+    border-radius:8px ;
+    -webkit-border-radius:8px ;
+    -moz-border-radius:8px ;
+    -ms-border-radius:8px ;
+    -o-border-radius:8px ;
+}
+
+.startExam a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: aliceblue;
+    letter-spacing: 2px;
+}

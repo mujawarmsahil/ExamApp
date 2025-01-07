@@ -1,4 +1,5 @@
 import {useState} from "react";
+import PropTypes from "prop-types";
 import "../css/addQuestions.css"
 function AddQuestion(props){
     let [list,setList] = useState([]);
@@ -13,6 +14,10 @@ function AddQuestion(props){
     });
     
     function handler(eventObject){
+        if(eventObject.target.name === 'answer' && (parseInt(eventObject.target.value) > 4 || parseInt(eventObject.target.value) < 1))
+        {
+            return ;
+        }
         setQuestion((prevState)=>{
             return {...prevState,[eventObject.target.name]:eventObject.target.value}
         })
@@ -43,7 +48,7 @@ function AddQuestion(props){
                 <div className="questionInsideContainer">
                     <section className="inputRow">
                         <section className="inputColumn">
-                            <input type="text" name="question" value={questionSet.question} id="" placeholder="Enter the question" className="form-control" onChange={(e)=>handler(e)}autoComplete="off"/>
+                            <input type="text" name="question" value={questionSet.question} id="" placeholder="Enter the question" className="form-control" onChange={(e)=>handler(e)} autoComplete="off"/>
                         </section>
                     </section>
                     <section className="optionContainer">
@@ -76,6 +81,10 @@ function AddQuestion(props){
             
         </>
     )
+}
+
+AddQuestion.propTypes = {
+    onSubmit: PropTypes.func.isRequired
 }
 
 export default AddQuestion

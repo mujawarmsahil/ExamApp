@@ -8,11 +8,31 @@ import DeleteQuestion from "./DeleteQuestion"
 import "../css/header.css"
 import {BrowserRouter,Routes,Route,NavLink} from "react-router-dom";
 import { useState } from "react"
+import Questions from "./Questions"
 import UpdateQuestions from "./UpdateQuestions"
 
 function Header(){
     let[allQuestionObject , setQuestionObject] = useState([]);
     let[isOpen , setChange] = useState(false)
+    let[schedule,passSchedule] = useState({
+        date : "",
+        startTime : "",
+        endTime  : "",
+        totalTime : "",
+        totalMarks : 0,
+        passingMarks : 0
+    })
+
+    function schedulePasser(obj){
+        passSchedule((prevState)=>{
+            return{
+                ...prevState,
+                ...obj
+            }
+        })
+        // console.log(schedule)
+    }
+
     function passList(questionSet){
         // console.log(questionSet)
         setQuestionObject((prevState)=>[...prevState,questionSet]);
@@ -59,11 +79,12 @@ function Header(){
                     <Route path="/" element={<Home/>}/>
                     <Route path="/addQuestions" element={<AddQuestion onSubmit={passList}/>}/>
                     <Route path="/viewQuestions" element={<ViewQuestion questionSet={allQuestionObject}/>}/>
-                    <Route path="/scheduleExam" element={<ScheduleExam/>}/>
-                    <Route path="/startExam" element={<StartExam/>}/>
+                    <Route path="/scheduleExam" element={<ScheduleExam passingFunction = {schedulePasser}/>}/>
+                    <Route path="/startExam" element={<StartExam scheduleObj = {schedule} questionSet={allQuestionObject}/>}/>
                     <Route path="/result" element={<Result/>}/>
                     <Route path="/DeleteQuestion/:index/*" element={<DeleteQuestion questionSet={allQuestionObject}/>}/>
                     <Route path="/UpdateQuestion/:index/*" element={<UpdateQuestions questionSet={allQuestionObject}/>}/>
+                    <Route path="/Questions" element={<Questions questionSet={allQuestionObject}/>}/>
                 </Routes>
             </BrowserRouter>
         </>

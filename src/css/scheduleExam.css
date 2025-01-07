@@ -1,15 +1,62 @@
 .scheduleContainer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    margin: 20px;
+    z-index: 0;
     display: flex;
+    /* min-height: 75%; */
     flex-direction: column;
     gap: 25px;
     padding: 3rem;
     background-color: rgba(245, 245, 245, 0.212);
     border-radius: 10px;
-    /* outline: 1px solid red; */
-    -webkit-border-radius: 10px;
+    /*outline: 1px solid red;
+    */-webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+.successMessage{
+    position: absolute;
+    left: 50%;
+    /*width: 200px;
+    */letter-spacing: 2px;
+    background-color: rgb(7, 7, 7);
+    border-radius: 15px;
+    border: 2px solid rgba(111, 202, 111, 0.719);
+    padding:20px ;
+    color: white;
+    top: -100%;
+    z-index: 1000;
+    transform: translate(-50%,-50%);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+    transition: 0.3s all;
+    -webkit-transition: 0.3s all;
+    -moz-transition: 0.3s all;
+    -ms-transition: 0.3s all;
+    -o-transition: 0.3s all;
+}
+
+.itemContainer{
+    width: 100%;
+    min-height: 100vh;
+}
+
+.common{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 #dateInput,.timeContainer .examTime{
@@ -24,6 +71,10 @@
     -moz-border-radius: 15px;
     -ms-border-radius: 15px;
     -o-border-radius: 15px;
+}
+
+.examTime::-webkit-inner-spin-button{
+    display: none;
 }
 
 #dateInput:hover,.timeContainer .examTime:hover{
@@ -55,8 +106,9 @@
 
 @media only screen and (max-width:600px)
 {
+
     .scheduleContainer{
-        padding: 1.2rem;
+        padding: 1.5rem;
     }
 
     .timeContainer , .buttons{

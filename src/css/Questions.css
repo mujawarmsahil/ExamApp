@@ -1,0 +1,44 @@
+.errQuestionMsg{
+    color: white;
+    text-decoration: underline;
+    font-size: 2rem;
+}
+
+.QuestionInterface{
+    width: 90%;
+    padding: 20px;
+    outline: 2px solid red;
+}
+
+.question{
+    width: 100%;
+    color: whitesmoke;
+    font-size: 1.3rem;
+}
+
+.row{
+    color:beige;
+    display: flex;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    gap:15px ;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.col{
+    width: 40%;
+    display: flex;
+    gap: 15px;
+}
+
+.col input[type="radio"]{
+    accent-color: rgb(101, 180, 101);
+}
+
+.moveBtns
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
