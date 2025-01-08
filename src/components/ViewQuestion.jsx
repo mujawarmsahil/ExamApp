@@ -1,4 +1,4 @@
-import "../css/ViewQuestions.css"
+import "../css/viewQuestions.css"
 import PropTypes from "prop-types"
 import {NavLink} from "react-router-dom"
 function ViewQuestion(props){
