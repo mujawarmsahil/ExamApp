@@ -10,7 +10,7 @@ function AddQuestion(props){
         option2:"",
         option3:"",
         option4:"",
-        answer:""
+        answer:0
     });
     
     function handler(eventObject){
@@ -19,6 +19,11 @@ function AddQuestion(props){
             return ;
         }
         setQuestion((prevState)=>{
+            if(eventObject.target.value === "answer" && parseInt(eventObject.target.value) >= 1 && parseInt(eventObject.target.value) <= 4)
+            {
+                return {...prevState,[eventObject.target.name]:parseInt(eventObject.target.value)}
+            }
+            else if(eventObject.target.value !== "answer")
             return {...prevState,[eventObject.target.name]:eventObject.target.value}
         })
     }
@@ -86,5 +91,6 @@ function AddQuestion(props){
 AddQuestion.propTypes = {
     onSubmit: PropTypes.func.isRequired
 }
+
 
 export default AddQuestion

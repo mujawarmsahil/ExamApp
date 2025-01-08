@@ -1,0 +1,8 @@
+.resultContainer{
+    flex-direction: column;
+    gap:20px;
+}
+
+.correctAnswers{
+    color: green;
+}

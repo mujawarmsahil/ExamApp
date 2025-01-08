@@ -7,13 +7,18 @@ function ScheduleExam(props){
         date : "",
         startTime : "",
         endTime  : "",
-        totalTime : 0,
         totalMarks : 0,
         passingMarks : 0
     });
 
     function handler(e){
         setSchedule((prevState)=>{
+            if(e.target.name === "totalMarks" || e.target.name === "passingMarks"){
+                return {
+                    ...prevState,
+                    [e.target.name] : parseInt(e.target.value),
+                }
+            }
             return {
                 ...prevState,
                 [e.target.name] : e.target.value,
@@ -60,7 +65,7 @@ function ScheduleExam(props){
 
     let removeMessage = setTimeout(()=>{
         document.querySelector(".successMessage").style.top = "-100%";
-    },30000);
+    },10000);
 
     return(
         <>

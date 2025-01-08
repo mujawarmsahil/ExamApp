@@ -5,7 +5,7 @@ import "../css/Questions.css"
 function Questions(props) {
     let [index, setIndex] = useState(0);
     let [answerSheet,setAnswerSheet] = useState(new Array(props.questionSet.length))
-    
+    let [correctAnswers,setCorrectAnswers] = useState(0)
     if (!props.questionSet || props.questionSet.length === 0) {
         return (
                 <div className="itemContainer">    
@@ -29,7 +29,20 @@ function Questions(props) {
         const updatedAnswerSheet = [...answerSheet];
         updatedAnswerSheet[index] = selectedOption;
         setAnswerSheet(updatedAnswerSheet);
-        console.log(updatedAnswerSheet)
+        if(selectedOption === props.questionSet[index].answer)
+        {
+            if(correctAnswers < props.questionSet.length)
+            {
+                setCorrectAnswers(correctAnswers + 1)
+            }
+        }
+        else{
+            if(correctAnswers > 0)
+            {
+                setCorrectAnswers(correctAnswers - 1)
+            }
+        }
+        // console.log(updatedAnswerSheet)
     }  
     
     if(index === props.questionSet.length - 1)
@@ -64,7 +77,7 @@ function Questions(props) {
                                 <button type="button" className="prevBtn" onClick={handlePrev}> Prev </button>
                             </div>
                             <div className="next">
-                                <button type="submit" className="nextBtn"><NavLink to={"/result"}> submit </NavLink></button>
+                                <button type="submit" className="nextBtn"><NavLink to={`/result`} onClick={()=>props.updateSheet(answerSheet)}>submit</NavLink></button>
                             
                             </div>
                         </div>
@@ -120,8 +133,13 @@ function Questions(props) {
                     option2: PropTypes.string.isRequired,
                     option3: PropTypes.string.isRequired,
                     option4: PropTypes.string.isRequired,
+                    answer: PropTypes.number.isRequired,
                 })
             ).isRequired,
         };
+
+        Questions.propTypes ={
+            updateSheet : PropTypes.func.isRequired,
+        }
 
         export default Questions;

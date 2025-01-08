@@ -22,6 +22,7 @@ function Header(){
         totalMarks : 0,
         passingMarks : 0
     })
+    let [answerSheet,setAnswerSheet] = useState(new Array(allQuestionObject.length))
 
     function schedulePasser(obj){
         passSchedule((prevState)=>{
@@ -33,6 +34,9 @@ function Header(){
         // console.log(schedule)
     }
 
+    function answerSheetUpdater(answerSheet){
+        setAnswerSheet([...answerSheet])
+    }
     function passList(questionSet){
         // console.log(questionSet)
         setQuestionObject((prevState)=>[...prevState,questionSet]);
@@ -71,7 +75,6 @@ function Header(){
                             <NavLink to="/viewQuestions"><li className="link" onClick={navChange}>View Questions</li></NavLink>
                             <NavLink to="/scheduleExam"><li className="link" onClick={navChange}>Schedule Exam</li></NavLink>
                             <NavLink to="/startExam"><li className="link" onClick={navChange}>Start Exam</li></NavLink>
-                            <NavLink to="/result"><li className="link" onClick={navChange}>Result </li></NavLink>
                         </ul>
                     </div>
                 </nav>
@@ -81,10 +84,10 @@ function Header(){
                     <Route path="/viewQuestions" element={<ViewQuestion questionSet={allQuestionObject}/>}/>
                     <Route path="/scheduleExam" element={<ScheduleExam passingFunction = {schedulePasser}/>}/>
                     <Route path="/startExam" element={<StartExam scheduleObj = {schedule} questionSet={allQuestionObject}/>}/>
-                    <Route path="/result" element={<Result/>}/>
+                    <Route path="/result"  element={<Result answerSheet={answerSheet} questionSet={allQuestionObject} perQuestionMarks ={Math.round(parseInt(schedule.totalMarks)/allQuestionObject.length)} passingMarks = {parseInt(schedule.passingMarks)} totalMarks = {parseInt(schedule.totalMarks)}/> }/>
                     <Route path="/DeleteQuestion/:index/*" element={<DeleteQuestion questionSet={allQuestionObject}/>}/>
                     <Route path="/UpdateQuestion/:index/*" element={<UpdateQuestions questionSet={allQuestionObject}/>}/>
-                    <Route path="/Questions" element={<Questions questionSet={allQuestionObject}/>}/>
+                    <Route path="/Questions" element={<Questions  updateSheet={answerSheetUpdater} questionSet={allQuestionObject}/>}/>
                 </Routes>
             </BrowserRouter>
         </>
