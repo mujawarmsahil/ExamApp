@@ -1,5 +1,5 @@
 import '../css/App.css'
-import Header from "./header"
+import Header from "./Header"
 import Footer from "./Footer"
 
 function App() {
