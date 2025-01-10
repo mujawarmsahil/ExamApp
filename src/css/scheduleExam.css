@@ -1,6 +1,6 @@
 .scheduleContainer{
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 50%;
     transform: translate(-50%,-50%);
     margin: 20px;
@@ -106,9 +106,9 @@
 
 @media only screen and (max-width:600px)
 {
-
     .scheduleContainer{
-        padding: 1.5rem;
+        /* flex-direction: row; */
+        padding:  1.5rem ;
     }
 
     .timeContainer , .buttons{
@@ -117,5 +117,13 @@
     }
     #dateInput,.timeContainer .examTime{
         width: 15rem;
+    }
+    .scheduleLink{
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .scheduleLink .scheduleBtn{
+        width: 100%;
     }
 }

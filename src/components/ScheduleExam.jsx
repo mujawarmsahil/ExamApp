@@ -103,7 +103,7 @@ function ScheduleExam(props){
             </div>
             <div className="buttons">
                 <button type="button" className="scheduleBtn" onClick={checkDate}>Validate</button>
-                <NavLink to="/startExam"><button type="submit" className="scheduleBtn" id="submitBtn" >Schedule an exam</button></NavLink>
+                <NavLink to="/startExam" className="scheduleLink"><button type="submit" className="scheduleBtn" id="submitBtn" >Schedule an exam</button></NavLink>
             </div>
             </div>
         </div>
