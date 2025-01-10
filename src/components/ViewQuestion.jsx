@@ -53,7 +53,7 @@ ViewQuestion.propTypes = {
             option2: PropTypes.string.isRequired,
             option3: PropTypes.string.isRequired,
             option4: PropTypes.string.isRequired,
-            answer: PropTypes.string.isRequired,
+            answer: PropTypes.number.isRequired,
         })
     ).isRequired,
 };
